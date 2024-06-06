@@ -1,0 +1,12 @@
+version: "3"
+services:
+  expose_my_site_agent_dev:
+    image: node:20.14.0-alpine
+    #restart: always
+    volumes:
+      - ./:/code
+    command: sh -c "cd /code && npm run start_agent"
+    # перед первым запуском заинсталить npm install
+    #command: sh -c "tail -f /dev/null"
+    env_file:
+      - ./env/agent.env

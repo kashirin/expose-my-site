@@ -1,0 +1,14 @@
+version: "3"
+services:
+  expose_my_site_server_dev:
+    image: node:20.14.0-alpine
+    #restart: always
+    ports:
+      - 3130:3130
+    volumes:
+      - ./:/code
+    command: sh -c "cd /code && npm run start_server"
+    # перед первым запуском заинсталить npm install
+    #command: sh -c "tail -f /dev/null"
+    env_file:
+      - ./env/server.env
