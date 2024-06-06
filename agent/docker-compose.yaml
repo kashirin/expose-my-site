@@ -1,4 +1,4 @@
-version: "3"
+version: "2"
 services:
   expose_my_site_agent_dev:
     image: node:20.14.0-alpine
